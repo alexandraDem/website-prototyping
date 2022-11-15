@@ -1,0 +1,482 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins:700');
+
+$color: #061634;
+$bg: #f2f2f2;
+$tablet-width: 768px;
+$desktop-width: 1150px;
+
+%reset {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative; 
+
+  font-family: "PT Sans", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  min-width: 320px;
+  @extend %reset;
+
+  background-color: $bg;
+
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+// Header
+
+.header {
+  position: relative;
+  
+  min-height: 100vh;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+  url(../img/header_bckg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  &__nav {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    
+    width: 100%;
+    height: 40px;
+
+    transition: 0.5s;
+
+    &--list {
+      height: 100%;
+      padding: 6px;
+    }
+
+    &--links {
+      display: flex;
+      justify-content: space-between;
+
+      width: 200px;
+      margin-left: auto;
+    }
+
+    &--link {
+      font-size: 1.2rem;
+
+      color: $bg;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__text {
+    padding-top: 150px;
+    padding-left: 10px;
+
+    &--main {
+      font-family: "Poppins", sans-serif;
+      font-size: 4.2rem;
+      line-height: 4rem;
+
+      margin: 0;
+      
+      color: $bg;
+    }
+
+    &--small {
+      font-size: 1.3rem;
+
+      margin: 0;
+      margin-top: 20px;
+
+      color: $bg;
+
+      opacity: 0.8;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 42px;
+    height: 20px;
+
+    color: $bg;
+
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-width) {
+  .header {
+
+    &__nav {
+      height: 45px;
+
+      &--list {
+        padding: 10px;
+      }
+
+      &--links {
+        width: 230px;
+      }
+
+      &--link {
+        font-size: 1.3rem;
+      }
+    }
+
+    &__text {
+      padding-top: 125px;
+      padding-left: 8%;
+
+      &--main {
+        font-size: 4.8rem;
+        line-height: 4.7rem;
+      }
+
+      &--small {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .header {
+
+    &__nav {
+      height: 50px;
+
+      &--list {
+        padding: 13px;
+      }
+
+      &--links {
+        width: 270px;
+      }
+
+      &--link {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__text {
+    padding-top: 8%;
+    padding-left: 6%;
+
+      &--main {
+        font-size: 6rem;
+        line-height: 7rem;
+      }
+
+      &--small {
+        font-size: 1.5rem;
+
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+// Projects section
+
+.projects {
+
+  color: $color;
+  padding-bottom: 40px;
+
+  &__main-header {
+    display: block;
+
+    font-size: 1.8rem;
+    text-align: center;
+    
+    margin: 0;
+    padding: 44px 0;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    width: 270px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+
+    &:hover .projects__preview {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+
+  &__preview {
+    display: block; 
+
+    width: 270px;
+    height: 270px;
+
+    border-radius: 4px;
+
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 
+                0 4px 12px 0 rgba(0, 0, 0, 0.19);
+
+    transition: 0.4s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__heading {
+    font-size: 1.3rem;
+
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: $tablet-width) {
+  .projects {
+    padding-bottom: 45px;
+
+    &__main-header {
+      font-size: 2rem;
+
+      padding: 49px 0;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .projects {
+    padding-bottom: 50px;
+
+    &__main-header {
+      font-size: 2.3rem;
+
+      padding: 59px 0;
+    }
+  }
+}
+
+// About section
+
+.about {
+  height: 82vh;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+  url(../img/footer_bckg.jpg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-attachment: fixed;
+  background-size: cover;
+
+  color: $bg;
+
+  &__header {
+    display: block;
+
+    font-size: 2.2rem;
+    text-align: center;
+    
+    margin: 0;
+    padding: 0;
+    padding-top: 75px;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    text-align: center;
+
+    margin-top: 30px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 70px;
+  }
+
+  &__item {
+    width: 90px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    margin-left: 10px;
+
+    color: $bg;
+    opacity: 0.85;
+
+    &:hover {
+      opacity: 1;
+      color: #131418;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-width) {
+  .about {
+
+    &__header {
+      font-size: 2.4rem;
+
+      padding-top: 100px;
+    }
+
+    &__links {
+      width: 60%;
+      margin-top: 100px;
+    }
+
+    &__item {
+      width: 65px;
+    }
+
+    &__link {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .about {
+
+    &__header {
+      font-size: 2.8rem;
+
+      padding-top: 115px;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+
+      margin-top: 35px;
+    }
+
+    &__links {
+      margin-top: 90px;
+    }
+  }
+}
+
+// Footer
+
+.footer {
+  height: 60px;
+
+  background-color: $color;
+
+  &__text {
+    font-size: 1.3rem;
+    color: $bg;
+
+    margin: 0;
+    padding-top: 15px;
+
+    opacity: 0.9;
+  }
+
+  &__link {
+    text-decoration: underline;
+
+    color: green;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-width) {
+  .footer {
+    height: 65px;
+
+    &__text {
+      font-size: 1.5rem;
+
+      padding-top: 19px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .footer {
+    height: 70px;
+
+    &__text {
+      font-size: 1.6rem;
+
+      padding-top: 22px;
+    }
+  }
+}
+
