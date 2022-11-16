@@ -1,0 +1,45 @@
+
+.container{
+    width: 80vw;
+}
+
+.buttonsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:beige;
+}
+
+
+#phrasesEndedWarning{
+    background-color: blanchedalmond;
+    visibility: hidden;
+}
+
+#phrasesContainer{
+    height: 80vh;
+   background-color:antiquewhite;
+}
+
+.phrase {
+    width: 10vw;
+    height: 5vh;
+    margin: 3px;
+    padding: 3px;
+    /* position: absolute; */
+    /* transform: translate(-50%,-50%);  */
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+
+    transition: all .2s ease-in-out;
+    font-size: 12px;
+    border: solid;
+    border-color: black;
+    border-radius: 4px;
+}
+
+.phrase:hover { 
+    transform: scale(1.2);
+}
